@@ -19,11 +19,8 @@ export const Post = ( {data} ) => {
                     <div className='my-3 blockquote-footer'>
                         { data.body }
                     </div>
-                    <div className='border-top mb-3 pt-3 text-right'>
-                        <span className='span-footer fw-light fst-italic text-muted'>
-                            0 comments
+                    <div className='border-top pt-3 my-2 text-right'>
                             <Comment id={ data.id }/>
-                        </span>
                     </div>
                 </div>
             </div>
