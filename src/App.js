@@ -1,11 +1,9 @@
 import React from 'react';
 import { AppRouter } from './router/AppRouter';
-import './App.css';
-
 
 function App() {
   return (
-    <div className="App">
+    <div className='container-fluid'>
       <AppRouter />
     </div>
   );

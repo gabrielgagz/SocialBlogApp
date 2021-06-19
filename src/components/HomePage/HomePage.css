@@ -1,0 +1,11 @@
+.container-posts{
+    padding: 0 4em 0 4em;
+}
+
+@media only screen and (max-width: 600px) {
+
+    .container-posts{
+        padding: 0 0.5em 0 0.5em;
+    }
+
+}
