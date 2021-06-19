@@ -1,13 +1,17 @@
 import axios from 'axios';
 
-const apiService = async ( type, id = '', url ) => {
+const apiService = async ( type, id = '' ) => {
 
     const apiUrl = axios.create({
-        baseURL: ( url ),
+        baseURL: ( process.env.REACT_APP_API_URL ),
     });
 
-    const response = await apiUrl.get(`/${ type }/${ id }`);
-    return await response.data;
+    try {
+        const response = await apiUrl.get(`/${ type }/${ id }`);
+        return await response.data;
+    } catch (error) {
+        console.log( error );
+    }
 
 }
 
