@@ -1,5 +1,6 @@
 import React from 'react';
 import './Post.css';
+import { Comment } from '../Comment/Comment';
 export const Post = ( {data} ) => {
 
     return (
@@ -18,10 +19,12 @@ export const Post = ( {data} ) => {
                     <div className='my-3 blockquote-footer'>
                         { data.body }
                     </div>
-                    <p>
+                    <div className='border-top mb-3 pt-3 text-right'>
                         <span className='span-footer fw-light fst-italic text-muted'>
+                            0 comments
+                            <Comment id={ data.id }/>
                         </span>
-                    </p>
+                    </div>
                 </div>
             </div>
         </div>

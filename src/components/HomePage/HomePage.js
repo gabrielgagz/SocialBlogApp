@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import apiService from '../../services/apiService';
+import apiGetService from '../../services/apiGetService';
 import { Post } from '../Post/Post';
 import './HomePage.css';
 
@@ -11,7 +11,7 @@ export const HomePage = () => {
         
         (async () => {
 
-            const data = await apiService('posts');
+            const data = await apiGetService('posts');
             setPostState( data );
 
         })();

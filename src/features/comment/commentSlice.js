@@ -1,32 +1,29 @@
-import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-
-const initialState = {
-  value: 0,
-  status: 'idle',
-};
+import { createSlice } from '@reduxjs/toolkit';
 
 export const commentSlice = createSlice({
   name: 'comment',
-  initialState,
+  initialState: { data: [] },
   // The `reducers` field lets us define reducers and generate associated actions
   reducers: {
-    reducer1: (state) => {
-      // action
-      return;
+    storeComments: (state, action) => {
+      state.data = action.payload;
     },
-    reducer2: (state) => {
-      // action
-      return;
-    },
-    // Use the PayloadAction type to declare the contents of `action.payload`
-    reducer3: (state, action) => {
-     // action
-      return;
+    deleteComment: (state, action) => {
+      state.data = state.filter(n => action.payload !== n.id);
     },
   },
 });
 
-export const { reducer1, reducer2, reducer3 } = commentSlice.actions;
+export const { storeComments, deleteComment } = commentSlice.actions;
+export const storeAllComments = data => dispatch => {
+  dispatch(storeComments(data));
+};
 
+// export const deleteNovelties = (id) => async dispatch => {
+//   await apiDeleteService('news', id)
+//   dispatch(deleteNovelty(id))
+// }
+
+export const commentSelector = state => state.comment.data;
 
 export default commentSlice.reducer;
