@@ -28,12 +28,12 @@ export const Comment = ( {id} ) => {
                     ( postComments && postComments.length > 0 )
                         && postComments.reverse().slice(0, countState +1 ).map( ( data ) => {
                         return (
-                            <div className='px-3 animate__animated animate__bounceIn' key={ data.id }>
-                                <p className='my-2 fw-lighter fw-bold'>
+                            <div className='px-3 animate__animated animate__bounceIn comment__single-comment shadow-sm fw-light' key={ data.id }>
+                                <p className='my-2 fw-bold'>
                                     <span className='fas fa-user-circle me-2 mt-1 comment__user-face'></span>
                                     { data.email }
                                 </p>
-                                <p className='fs-6'> 
+                                <p> 
                                     { data.body }
                                 </p>
                             </div>

@@ -16,7 +16,7 @@ export const Post = ( {data} ) => {
                     <h5 className='card-title my-2'>
                         [ { data.title } ]
                     </h5>
-                    <div className='my-3 blockquote-footer'>
+                    <div className='my-4 blockquote-footer'>
                         { data.body }
                     </div>
                     <div className='border-top pt-3 my-2 text-right'>
