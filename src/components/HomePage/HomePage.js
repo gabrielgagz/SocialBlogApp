@@ -41,7 +41,7 @@ export const HomePage = () => {
             className='btn HomePage__btn-more mt-3 mb-5 p-3 mx-auto d-block'
             onClick={ ()  => setLoadedPosts( loadedPosts + 3 ) }
             >
-                VER MORE POSTS
+                VIEW MORE POSTS
             </button>
         </div>
     )

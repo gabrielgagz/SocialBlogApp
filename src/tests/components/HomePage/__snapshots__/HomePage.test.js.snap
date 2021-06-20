@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<HomePage /> tests Component must properly render 1`] = `
+<div
+  className="container-fluid container-posts"
+>
+  <div
+    className="row row-cols-1 row-cols-md-3 my-5 justify-content-center"
+  />
+  <button
+    className="btn HomePage__btn-more mt-3 mb-5 p-3 mx-auto d-block"
+    onClick={[Function]}
+  >
+    VIEW MORE POSTS
+  </button>
+</div>
+`;
