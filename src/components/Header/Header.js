@@ -63,15 +63,14 @@ export const Header = () => {
                         </div>
                     </div>
                     <div className='justify-content-end text-center py-1 mt-2 me-2'>
-                        <p className='mb-0 text-white'>
-                            <i className='fas fa-user-edit me-2'></i>
-                            Comment as:
+                        <p className='mb-0 text-white font- Header__right'>
+                            EDIT USER E-MAIL:
                         </p>
                         <form onSubmit={ handleSubmit } className='p-0 mt-0'>
                             <div className='input-group mb-2'>
                                 <input
                                     autoComplete='off'
-                                    type='text' 
+                                    type='email' 
                                     className='form-control border-0 bg-transparent text-white text-center' 
                                     name='email' 
                                     onChange={ handleInputChange }

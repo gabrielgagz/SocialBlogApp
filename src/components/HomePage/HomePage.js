@@ -29,7 +29,7 @@ export const HomePage = () => {
     }, []);
 
     return (
-        <div className='container-fluid container-posts'>
+        <div className='container-fluid'>
             <div className='row row-cols-1 row-cols-md-3 my-5 justify-content-center'>
                 { 
                     (postState && postState.length > 0) && postState.slice(0, loadedPosts).map( ( postData ) => {

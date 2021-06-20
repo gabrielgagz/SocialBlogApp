@@ -1,6 +1,3 @@
-.container-posts {
-    padding: 0 4em 0 4em;
-}
 
 .HomePage__btn-more {
     color: white;
@@ -12,12 +9,4 @@
 .HomePage__btn-more:hover {
     color: white;
     background-color: #292b2c;
-}
-
-@media only screen and (max-width: 600px) {
-
-    .container-posts{
-        padding: 0 0.5em 0 0.5em;
-    }
-
 }

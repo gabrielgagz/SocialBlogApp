@@ -10,3 +10,16 @@
 .Header__check_0 {
     opacity: 0%;
 }
+
+.Header__right {
+    font-size: small;
+    font-weight: bold;
+}
+
+@media only screen and (max-width: 600px) {
+
+    .Header__right {
+        padding-top: 2em;
+    }
+
+}
