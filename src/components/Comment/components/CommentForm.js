@@ -1,11 +1,13 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { storeNewComment } from '../../../features/comment/commentSlice';
 import { useForm } from '../../../hooks/useForm';
 
 export const CommentForm = ( {id} ) => {
 
     const dispatch = useDispatch();
+    const user = useSelector( state => state.user.data.email );
+
 
     // Set the initial values of form
     const initialForm = {
@@ -29,7 +31,7 @@ export const CommentForm = ( {id} ) => {
                 id: Math.random(),
                 postId: id,
                 name: 'lorem ipsum martin san',
-                email: 'user@user.com',
+                email: user,
                 title: '',
                 body
             }
