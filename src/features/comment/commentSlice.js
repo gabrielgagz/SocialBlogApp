@@ -8,22 +8,23 @@ export const commentSlice = createSlice({
     storeComments: (state, action) => {
       state.data = action.payload;
     },
-    deleteComment: (state, action) => {
-      state.data = state.filter(n => action.payload !== n.id);
+    storeComment: (state, action) => {
+      state.data = [...state.data, action.payload];
     },
   },
 });
 
-export const { storeComments, deleteComment } = commentSlice.actions;
+export const { storeComments, storeComment } = commentSlice.actions;
+
+// Store all comments from endpoint
 export const storeAllComments = data => dispatch => {
   dispatch(storeComments(data));
 };
 
-// export const deleteNovelties = (id) => async dispatch => {
-//   await apiDeleteService('news', id)
-//   dispatch(deleteNovelty(id))
-// }
-
-export const commentSelector = state => state.comment.data;
+// Store a single comment in state
+export const storeNewComment = data => dispatch => {
+  dispatch(storeComment(data));
+};
+export const commentSelector = state => state.comment.data; // Not used
 
 export default commentSlice.reducer;

@@ -1,18 +1,26 @@
 import React, { useEffect, useState } from 'react';
 import apiGetService from '../../services/apiGetService';
 import { Post } from '../Post/Post';
+import { useDispatch } from 'react-redux';
+import { storeAllComments } from '../../features/comment/commentSlice';
 import './HomePage.css';
 
 export const HomePage = () => {
 
-    const [ postState, setPostState] = useState({});
+    const [ postState, setPostState ] = useState({});
+    const dispatch = useDispatch();
 
     useEffect(() => {
         
         (async () => {
 
-            const data = await apiGetService('posts');
-            setPostState( data );
+            // Store Posts in local state
+            const pData = await apiGetService('posts');
+            setPostState( pData );
+
+            // Store Comments in Redux
+            const cData = await apiGetService('comments');
+            dispatch( storeAllComments(cData) );
 
         })();
 
