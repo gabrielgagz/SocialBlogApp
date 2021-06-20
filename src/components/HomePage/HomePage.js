@@ -8,6 +8,7 @@ import './HomePage.css';
 export const HomePage = () => {
 
     const [ postState, setPostState ] = useState({});
+    const [loadedPosts, setLoadedPosts] = useState(3);
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -31,11 +32,17 @@ export const HomePage = () => {
         <div className='container-fluid container-posts'>
             <div className='row row-cols-1 row-cols-md-3 my-5 justify-content-center'>
                 { 
-                    postState.length > 0 && postState.map( ( postData ) => {
+                    (postState && postState.length > 0) && postState.slice(0, loadedPosts).map( ( postData ) => {
                         return <Post data={ postData } key={ postData.id }/>
                     }) 
                 }
             </div>
+            <button 
+            className='btn HomePage__btn-more mt-3 mb-5 p-3 mx-auto d-block'
+            onClick={ ()  => setLoadedPosts( loadedPosts + 3 ) }
+            >
+                VER MORE POSTS
+            </button>
         </div>
     )
 }
