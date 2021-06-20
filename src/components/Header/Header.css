@@ -1,3 +1,12 @@
 .Header__img-logo{
     width: 55%;
 }
+
+.Header__check {
+    color:rgb(133, 177, 133);
+    
+}
+
+.Header__check_0 {
+    opacity: 0%;
+}

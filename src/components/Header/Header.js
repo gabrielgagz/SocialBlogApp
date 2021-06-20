@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { useForm } from '../../hooks/useForm';
@@ -21,6 +21,15 @@ export const Header = () => {
 
     const handleSubmit = ( e ) => {
 
+        const checkIcon = document.querySelector('.fa-check-circle');
+        checkIcon.classList.add('animate__animated', 'animate__fadeIn');
+        checkIcon.classList.remove('Header__check_0');
+
+        setTimeout(() => {
+            checkIcon.classList.add('Header__check_0');
+            checkIcon.classList.remove('animate__animated', 'animate__fadeIn');
+        }, 3000);
+
         e.preventDefault();
 
         // Save comment in store
@@ -32,7 +41,7 @@ export const Header = () => {
     }
 
     return (
-        <nav className='navbar navbar-expand-lg navbar-dark bg-dark shadow d-flex p-3'>
+        <nav className='navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow p-3'>
             <div className='container-fluid'>
                 <NavLink className='justify-content-start ms-2' to='/'>
                     <img className='Header__img-logo img-fluid' src={ logo } alt='Logo'/>
@@ -59,7 +68,7 @@ export const Header = () => {
                             Comment as:
                         </p>
                         <form onSubmit={ handleSubmit } className='p-0 mt-0'>
-                            <div className='input-group mb-2 pe-2'>
+                            <div className='input-group mb-2'>
                                 <input
                                     autoComplete='off'
                                     type='text' 
@@ -69,6 +78,7 @@ export const Header = () => {
                                     value={ email }
                                     required
                                 />
+                                <i className='fas fa-check-circle Header__check Header__check_0 mt-2'></i>
                             </div>
                         </form>
                     </div>
