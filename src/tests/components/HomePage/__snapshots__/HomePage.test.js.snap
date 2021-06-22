@@ -2,7 +2,7 @@
 
 exports[`<HomePage /> tests Component must properly render 1`] = `
 <div
-  className="container-fluid container-posts"
+  className="container-fluid"
 >
   <div
     className="row row-cols-1 row-cols-md-3 my-5 justify-content-center"
