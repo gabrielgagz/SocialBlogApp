@@ -1,3 +1,5 @@
+![](preview.gif)
+
 # About
 
 A simple social blog app.
