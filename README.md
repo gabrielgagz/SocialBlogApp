@@ -1,4 +1,16 @@
+# About
+
+A simple social blog app.
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
+
+
+# Warning
+
+You need to set up environment variables for both, client and server.
+
+Client (url of API KEY):
+
+### `REACT_APP_API_URL`
 
 ## Available Scripts
 
